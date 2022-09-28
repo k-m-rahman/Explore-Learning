@@ -4,7 +4,7 @@ import PageName from '../PageName/PageName';
 
 const LeftSection = () => {
     return (
-        <div className='lg:col-span-4 p-6  md:p-16 flex flex-col gap-8'>
+        <div className='lg:col-span-7 p-6  md:p-16 flex flex-col gap-8 bg-slate-50 shadow-xl'>
 
                 {/* page name  */}
                 <PageName></PageName>
