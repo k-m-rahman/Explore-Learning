@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExerciseDetails = ({exerciseTime}) => {
+const ExerciseDetails = ({exerciseTime,breakTime}) => {
     
     return (
         <div className='py-3 text-center mt-7'>
@@ -15,7 +15,7 @@ const ExerciseDetails = ({exerciseTime}) => {
             {/* Break time  */}
             <div className='flex  bg-blue-100 py-3 px-6 justify-between rounded-xl mt-5 shadow-lg w-2/3 md:w-1/2 lg:w-full mx-auto items-center'>
                 <span className='font-medium'>Break Time</span>
-                <span className='text-sm text-gray-500'>30s</span>
+                <span className='text-sm text-gray-500'>{breakTime}s</span>
             </div>
         </div>
     );

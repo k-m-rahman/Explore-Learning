@@ -5,7 +5,7 @@ import PersonalInfo from '../PersonalInfo/PersonalInfo';
 
 const RightSection = ({exerciseTime}) => {
 
-    const [breakTime,setBreakTime] = useState(0)
+    const [breakTime,setBreakTime] = useState(0);
 
     return (
         <div className='p-3 lg:col-span-2'>
@@ -13,9 +13,9 @@ const RightSection = ({exerciseTime}) => {
             <PersonalInfo></PersonalInfo>
 
             <div className='sticky top-0'>
-                <AddBreak></AddBreak>
+                <AddBreak setBreakTime={setBreakTime}></AddBreak>
 
-                <ExerciseDetails exerciseTime={exerciseTime}></ExerciseDetails>
+                <ExerciseDetails breakTime={breakTime} exerciseTime={exerciseTime}></ExerciseDetails>
 
                 <div className='flex justify-center mt-10'>
                     <button className='btn btn-primary rounded-lg w-2/3 md:w-1/2 lg:w-full '>Activity Completed</button>
