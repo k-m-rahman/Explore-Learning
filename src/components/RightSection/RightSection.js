@@ -1,9 +1,10 @@
 import React from 'react';
+import PersonalInfo from '../PersonalInfo/PersonalInfo';
 
 const RightSection = () => {
     return (
-        <div >
-            <h3>Right</h3>
+        <div className='p-3  border-2'>
+            <PersonalInfo></PersonalInfo>
         </div>
     );
 };

@@ -1,16 +1,17 @@
 import React from 'react';
 
 const Activity = ({activity}) => {
-    const {name,picture} = activity ;
+    const {name,picture , about , time} = activity ;
     return (
         
-        <div className="card w-100 bg-base-100 shadow-xl">
-            <figure><img src={picture} alt={name} /></figure>
+        <div className="card rounded-lg w-100 bg-base-100 shadow-xl">
+            <figure><img className='h-[200px] lg:h-[150px] w-full shadow-sm' src={picture} alt={name} /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
+                <p>{about.length>100?about.slice(0,100):about}</p>
+                <p className='font-medium'>Time Required: <span className='font-semibold text-lg'>{time}s</span></p>
+                <div className="card-actions ">
+                <button className="btn btn-primary rounded-lg w-full mt-3">Add To List</button>
                  </div>
             </div>
         </div>
