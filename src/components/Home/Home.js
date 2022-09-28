@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LeftSection from '../LeftSection/LeftSection';
 import RightSection from '../RightSection/RightSection';
 
 const Home = () => {
+
+    const [exerciseTime,setExerciseTime] = useState(0);
+
     return (
         <div className='grid grid-cols-1  lg:grid-cols-9'>
 
             {/* Left section */}
-            <LeftSection></LeftSection>
+            <LeftSection setExerciseTime={setExerciseTime}></LeftSection>
 
             {/* right section */}
-            <RightSection></RightSection>
+            <RightSection exerciseTime={exerciseTime} ></RightSection>
         </div>
     );
 };

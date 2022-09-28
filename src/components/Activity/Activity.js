@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Activity = ({activity}) => {
+const Activity = ({activity,setExerciseTime}) => {
     const {name,picture , about , time} = activity ;
     return (
         
@@ -11,7 +11,7 @@ const Activity = ({activity}) => {
                 <p>{about.length>100?about.slice(0,100):about}</p>
                 <p className='font-medium'>Time Required: <span className='font-semibold text-lg'>{time}s</span></p>
                 <div className="card-actions ">
-                <button className="btn btn-primary rounded-lg w-full mt-3">Add To List</button>
+                <button onClick={()=>{setExerciseTime((current)=>current+time)}} className="btn btn-primary rounded-lg w-full mt-3">Add To List</button>
                  </div>
             </div>
         </div>
