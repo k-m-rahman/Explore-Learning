@@ -19,8 +19,8 @@ const PersonalInfo = () => {
 
             <div className='flex gap-5 bg-blue-100 p-3 justify-center items-center rounded-xl mt-5 shadow-lg w-2/3 lg:w-full mx-auto text-center'>
                 <div>
-                    <h2 className='font-bold'>Web Developer</h2>
-                    <h3 className='text-xs font-medium text-slate-700'>Occupation</h3>
+                    <h2 className='font-bold'>Graduated</h2>
+                    <h3 className='text-xs font-medium text-slate-700'>Education</h3>
                 </div>
                 <div>
                     <h2 className='font-bold'>3.00</h2>

@@ -13,10 +13,17 @@ const Activity = ({activity,setLessonTime , pressedCompleted , setPressedComplet
     // whenever 'Lesson Completed' button pressed all "ADDED" button converted into "ADD TO LIST"
     if(pressedCompleted === true && added===true){
         setAdded(false);
+
+        const buttonList = document.getElementsByClassName('add-to-list-button');
+        for(let button of buttonList){
+            button.classList.remove('btn-success');
+            button.classList.remove('hover:bg-emerald-500');
+            button.classList.add('btn-primary');
+        }
     }
     
     // for adding lesson activity time into both in local storage and right side of the UI 
-    const addLessonTime = () => {
+    const addLessonTime = (event) => {
 
         // 
         setPressedCompleted(false) ;
@@ -35,8 +42,13 @@ const Activity = ({activity,setLessonTime , pressedCompleted , setPressedComplet
         }
         addDataToDb(storedData);
 
+        
         // for converting the 'ADD TO LIST' button to 'ADDED'
         setAdded(true);
+
+        event.target.classList.remove('btn-primary');
+        event.target.classList.add('btn-success');
+        event.target.classList.add('hover:bg-emerald-500');
     }
 
     return (
@@ -48,7 +60,7 @@ const Activity = ({activity,setLessonTime , pressedCompleted , setPressedComplet
                 <p>{about.length>100?about.slice(0,100):about}</p>
                 <p className='font-medium'>Time Required: <span className='font-semibold text-lg'>{time}s</span></p>
                 <div className="card-actions ">
-                <button onClick={addLessonTime} className="btn btn-primary rounded-lg w-full mt-3 shadow-md focus:bg-emerald-500">{added?'Added':'Add To List'}</button>
+                <button onClick={addLessonTime} className="btn btn-primary rounded-lg w-full mt-3 shadow-md  font-bold add-to-list-button">{added?'Added':'Add To List'}</button>
                  </div>
             </div>
         </div>

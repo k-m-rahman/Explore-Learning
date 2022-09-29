@@ -56,7 +56,7 @@ const RightSection = ({LessonTime , setLessonTime , setPressedCompleted}) => {
                 <LessonDetails breakTime={breakTime} LessonTime={LessonTime}></LessonDetails>
 
                 <div className='flex justify-center mt-10'>
-                    <button onClick={lessonCompleted} className='btn btn-primary rounded-lg w-2/3 md:w-1/2 lg:w-full '>Lesson Completed</button>
+                    <button onClick={lessonCompleted} className='btn btn-info hover:bg-sky-500 rounded-lg w-2/3 md:w-1/2 lg:w-full font-bold'>Lesson Completed</button>
                     <ToastContainer ></ToastContainer>
                 </div>
             </div>

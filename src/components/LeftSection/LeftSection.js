@@ -11,7 +11,7 @@ const LeftSection = ({setLessonTime , pressedCompleted , setPressedCompleted}) =
                 <PageName></PageName>
 
 
-                <h2 className='text-xl font-semibold mt-4'>Select Today's Lessons</h2>
+                <h2 className='text-3xl font-semibold underline mt-4 italic'>Select Today's Lessons</h2>
                 
                 <Activities setPressedCompleted={setPressedCompleted} pressedCompleted={pressedCompleted} setLessonTime={setLessonTime}></Activities>
             </div>
