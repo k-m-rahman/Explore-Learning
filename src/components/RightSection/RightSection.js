@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getStoredData } from '../../utilities/fakeDb';
 import AddBreak from '../AddBreak/AddBreak';
-import ExerciseDetails from '../ExerciseDetails/ExerciseDetails';
+import LessonDetails from '../LessonDetails/LessonDetails';
 import PersonalInfo from '../PersonalInfo/PersonalInfo';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import swal from 'sweetalert';
 
-const RightSection = ({exerciseTime}) => {
+
+const RightSection = ({LessonTime , setLessonTime}) => {
 
     const [breakTime,setBreakTime] = useState(0);
 
@@ -15,6 +19,26 @@ const RightSection = ({exerciseTime}) => {
         }    
     },[])
 
+
+    const lessonCompleted = () => {
+        
+        if(LessonTime){
+            toast('Wow you have completed all the lessons !', {
+                position: "top-right",
+                autoClose: 1800,
+                pauseOnHover: false
+                });
+        }
+        else{
+            swal("Oops!", "At least select one lesson!", "error");
+            return ;
+        }
+
+        localStorage.removeItem('lessonData');
+        setBreakTime(0);
+        setLessonTime(0);    
+    }
+
     return (
         <div className='p-3 lg:col-span-2'>
 
@@ -23,10 +47,11 @@ const RightSection = ({exerciseTime}) => {
             <div className='sticky top-0'>
                 <AddBreak setBreakTime={setBreakTime}></AddBreak>
 
-                <ExerciseDetails breakTime={breakTime} exerciseTime={exerciseTime}></ExerciseDetails>
+                <LessonDetails breakTime={breakTime} LessonTime={LessonTime}></LessonDetails>
 
                 <div className='flex justify-center mt-10'>
-                    <button className='btn btn-primary rounded-lg w-2/3 md:w-1/2 lg:w-full '>Activity Completed</button>
+                    <button onClick={lessonCompleted} className='btn btn-primary rounded-lg w-2/3 md:w-1/2 lg:w-full '>Lesson Completed</button>
+                    <ToastContainer ></ToastContainer>
                 </div>
             </div>
 
