@@ -4,22 +4,27 @@ import { addDataToDb, getStoredData } from '../../utilities/fakeDb';
 
 const Activity = ({activity,setLessonTime , pressedCompleted , setPressedCompleted}) => {
     
+    // destructuring the activity object
     const {name,picture , about , time} = activity ;
 
+    // for 'ADD TO LIST' button converted into 'ADDED'
     const [added,setAdded] = useState(false) ;
 
-    if(pressedCompleted === true){
-        if(added===true){
-            setAdded(false);
-        }  
+    // whenever 'Lesson Completed' button pressed all "ADDED" button converted into "ADD TO LIST"
+    if(pressedCompleted === true && added===true){
+        setAdded(false);
     }
     
+    // for adding lesson activity time into both in local storage and right side of the UI 
     const addLessonTime = () => {
 
+        // 
         setPressedCompleted(false) ;
 
+        // adding the lesson time 
         setLessonTime(current => current+time);
 
+        // adding the lesson time into local storage
         const storedData = getStoredData();
         const previousTime = Number(storedData['lessonTime']) ;
         if(previousTime){
@@ -30,6 +35,7 @@ const Activity = ({activity,setLessonTime , pressedCompleted , setPressedComplet
         }
         addDataToDb(storedData);
 
+        // for converting the 'ADD TO LIST' button to 'ADDED'
         setAdded(true);
     }
 

@@ -10,8 +10,10 @@ import swal from 'sweetalert';
 
 const RightSection = ({LessonTime , setLessonTime , setPressedCompleted}) => {
 
+    // for setting the break time 
     const [breakTime,setBreakTime] = useState(0);
 
+    // for getting the break time stored in local storage
     useEffect(()=>{
         const storedData = getStoredData() ;
         if(storedData.breakTime){
@@ -20,10 +22,12 @@ const RightSection = ({LessonTime , setLessonTime , setPressedCompleted}) => {
     },[])
 
 
+    // the actions when "Lesson Completed" button clicked
     const lessonCompleted = () => {
         
+        // at least one lesson activity must be selected
         if(LessonTime){
-            toast('Congratulations! You have completed all the lessons !', {
+            toast('Congratulations! You have completed the lessons !', {
                 autoClose: 1800,
                 pauseOnHover: true 
                 });
@@ -34,6 +38,8 @@ const RightSection = ({LessonTime , setLessonTime , setPressedCompleted}) => {
         }
 
         localStorage.removeItem('lessonData');
+
+        // setting initial/default value in every state
         setBreakTime(0);
         setLessonTime(0);
         setPressedCompleted(true);    

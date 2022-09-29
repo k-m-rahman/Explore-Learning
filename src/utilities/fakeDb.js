@@ -3,8 +3,6 @@ const addDataToDb = (lessonData) => {
 
 }
 
-
-
 const getStoredData = () => {
     
     let lessonData = {};

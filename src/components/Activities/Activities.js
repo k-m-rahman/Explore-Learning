@@ -3,6 +3,7 @@ import Activity from '../Activity/Activity';
 
 const Activities = ({setLessonTime , pressedCompleted , setPressedCompleted}) => {
 
+    // for fetching the activities data
     const [activities,setActivities] = useState([]) ;
 
     useEffect(()=>{

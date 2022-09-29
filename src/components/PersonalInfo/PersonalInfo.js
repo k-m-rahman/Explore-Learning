@@ -15,7 +15,7 @@ const PersonalInfo = () => {
                 </div>
             </div>
 
-            {/* weight , height and age */}
+            {/* occupation , CGPA and age */}
 
             <div className='flex gap-5 bg-blue-100 p-3 justify-center items-center rounded-xl mt-5 shadow-lg w-2/3 lg:w-full mx-auto text-center'>
                 <div>

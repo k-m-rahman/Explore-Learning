@@ -5,6 +5,7 @@ const AddBreak = ({setBreakTime}) => {
 
     const breakTimes = [10,20,30,40,50] ;
 
+    // for setting the clicked break time both into local storage and lower portion of the UI 
     const addBreakTime = breakTime => {
         setBreakTime(breakTime) ;
         const storedData = getStoredData();
