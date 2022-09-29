@@ -27,6 +27,7 @@ const Home = () => {
 
             {/* right section */}
             <RightSection setPressedCompleted={setPressedCompleted} setLessonTime={setLessonTime} LessonTime={LessonTime} ></RightSection>
+            
         </div>
     );
 };
