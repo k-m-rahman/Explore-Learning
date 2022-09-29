@@ -7,7 +7,7 @@ const Blog = () => {
             <h1 className='text-4xl font-[600] m-12'>Blogs</h1>
 
             {/* How does react work ? */}
-            <div className="collapse shadow-lg w-4/5 mx-auto rounded-md ">
+            <div className="collapse shadow-lg w-[93%]  md:w-4/5 mx-auto rounded-md ">
                 <input type="checkbox" className="peer" /> 
                 <div className="collapse-title text-2xl font-semibold bg-sky-50 text-primary-content peer-checked:bg-white text-center">
                     How does react work ?
@@ -18,65 +18,72 @@ const Blog = () => {
             </div>
 
             {/* Props vs State */}
-            <div className="collapse shadow-lg w-4/5 mx-auto rounded-md mt-5">
+            <div className="collapse shadow-lg w-[93%]  md:w-4/5 mx-auto rounded-md mt-5">
                 <input type="checkbox" className="peer" /> 
                 <div className="collapse-title text-2xl font-semibold bg-sky-50 text-primary-content peer-checked:bg-white text-center">
                 Props vs State
                 </div>
                 <div className="collapse-content  text-primary-content peer-checked:bg-white peer-checked:text-secondary-content text-lg text-justify"> 
-                    <div className="overflow-x-auto">
-                        <table className="table w-full">
-                            {/* <!-- head --> */}
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Name</th>
-                                    <th>Job</th>
-                                    <th>Favorite Color</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {/* <!-- row 1 --> */}
-                                <tr>
-                                    <th>1</th>
-                                    <td>Cy Ganderton</td>
-                                    <td>Quality Control Specialist</td>
-                                    <td>Blue</td>
-                                </tr>
-                                {/* <!-- row 2 --> */}
-                                <tr>
-                                    <th>2</th>
-                                    <td>Hart Hagerty</td>
-                                    <td>Desktop Support Technician</td>
-                                    <td>Purple</td>
-                                </tr>
-                                {/* <!-- row 3 --> */}
-                                <tr>
-                                    <th>3</th>
-                                    <td>Brice Swyre</td>
-                                    <td>Tax Accountant</td>
-                                    <td>Red</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    {/* table starts here */}
+                    <div  className='w-full rounded-md border-orange-700 border'>
+
+                        {/* table header */}
+                        <div className='grid grid-cols-2 rounded-md bg-orange-50 font-semibold'>
+                            <p className='p-3 border-r'>
+                                Props
+                            </p>
+                            <p className='p-3'>
+                                State
+                            </p>
+                        </div>
+
+                        {/* differences */}
+
+                        {/* 1 */}
+                        <div className='grid grid-cols-2 border-t'>
+                            <p className='p-3  border-r'>
+                                Props are immutable that is their content cannot be changed once assigned.
+                            </p>
+                            <p className='p-3'>
+                                States are mutable and their value can be changed as per requirement. 
+                            </p>
+                        </div>
+
+                        {/* 2 */}
+                        <div className='grid grid-cols-2 border-t'>
+                            <p className='p-3  border-r'>
+                                Set by event handlers that is they are completely managed by component itself.
+                            </p>
+                            <p className='p-3'>
+                                Set by parent component. 
+                            </p>
+                        </div>
+
+                        {/* 3 */}
+                        <div className='grid grid-cols-2 border-t'>
+                            <p className='p-3  border-r'>
+                                Props allows child components to read values from parent components.
+                            </p>
+                            <p className='p-3'>
+                                State is local to a component and cannot be used in other components.
+                            </p>
+                        </div>
+                         
                     </div>
+               
                 </div>
             </div>
 
             {/* useEffect */}
-            <div className="collapse shadow-lg w-4/5 mx-auto rounded-md mt-5">
+            <div className="collapse shadow-lg w-[93%]  md:w-4/5 mx-auto rounded-md mt-5">
                 <input type="checkbox" className="peer" /> 
                 <div className="collapse-title text-2xl font-semibold bg-sky-50 text-primary-content peer-checked:bg-white text-center">
                 useEffect
                 </div>
                 <div className="collapse-content  text-primary-content peer-checked:bg-white peer-checked:text-secondary-content text-lg text-justify"> 
-                    <p>React uses a declarative paradigm that makes it easier to reason about your application and aims to be both efficient and flexible. It designs simple views for each state in your application, and React will efficiently update and render just the right component when your data changes.</p>
+                    <p>The useEffect hook allows us to perform side effects in components. Other than fetching data from API or any other sources there are multiple side effects useEffect can perform. Such as: directly updating the DOM, timers. </p>
                 </div>
-            </div>
-
-          
-
-            
+            </div>  
         </div>
     );
 };
