@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getStoredData } from '../../utilities/fakeDb';
 import AddBreak from '../AddBreak/AddBreak';
 import ExerciseDetails from '../ExerciseDetails/ExerciseDetails';
 import PersonalInfo from '../PersonalInfo/PersonalInfo';
@@ -6,6 +7,13 @@ import PersonalInfo from '../PersonalInfo/PersonalInfo';
 const RightSection = ({exerciseTime}) => {
 
     const [breakTime,setBreakTime] = useState(0);
+
+    useEffect(()=>{
+        const storedData = getStoredData() ;
+        if(storedData.breakTime){
+            setBreakTime(storedData.breakTime);
+        }    
+    },[])
 
     return (
         <div className='p-3 lg:col-span-2'>

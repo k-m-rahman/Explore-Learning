@@ -12,7 +12,7 @@ const LeftSection = ({setExerciseTime}) => {
 
                 <h2 className='text-xl font-semibold mt-4'>Select Today's Lessons</h2>
                 
-                <Activities setExerciseTime={setExerciseTime}></Activities>
+                <Activities  setExerciseTime={setExerciseTime}></Activities>
             </div>
     );
 };

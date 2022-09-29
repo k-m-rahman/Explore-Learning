@@ -19,15 +19,15 @@ const PersonalInfo = () => {
 
             <div className='flex gap-5 bg-blue-100 p-3 justify-center rounded-xl mt-5 shadow-lg w-2/3 lg:w-full mx-auto text-center'>
                 <div>
-                    <h2 className='text-xl font-semibold'>75<span className='text-sm text-slate-600'>kg</span></h2>
-                    <h3 className='text-xs font-medium text-slate-700'>Weight</h3>
+                    <h2 className='font-bold'>Freelancer</h2>
+                    <h3 className='text-xs font-medium text-slate-700'>Occupation</h3>
                 </div>
                 <div>
-                    <h2 className='text-xl font-semibold'>6.5</h2>
-                    <h3 className='text-xs font-medium text-slate-700'>Height</h3>
+                    <h2 className='font-bold'>4.00</h2>
+                    <h3 className='text-xs font-medium text-slate-700'>CG</h3>
                 </div>
                 <div>
-                    <h2 className='text-xl font-semibold'>35<span className='text-sm text-slate-600'>yrs</span></h2>
+                    <h2 className='font-bold'>35<span className='text-sm text-slate-600'>yrs</span></h2>
                     <h3 className='text-xs font-medium text-slate-700'>Age</h3>
                 </div>
             </div>
