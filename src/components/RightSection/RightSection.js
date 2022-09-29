@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
 
 
-const RightSection = ({LessonTime , setLessonTime}) => {
+const RightSection = ({LessonTime , setLessonTime , setPressedCompleted}) => {
 
     const [breakTime,setBreakTime] = useState(0);
 
@@ -23,10 +23,9 @@ const RightSection = ({LessonTime , setLessonTime}) => {
     const lessonCompleted = () => {
         
         if(LessonTime){
-            toast('Wow you have completed all the lessons !', {
-                position: "top-right",
+            toast('Congratulations! You have completed all the lessons !', {
                 autoClose: 1800,
-                pauseOnHover: false
+                pauseOnHover: true 
                 });
         }
         else{
@@ -36,7 +35,8 @@ const RightSection = ({LessonTime , setLessonTime}) => {
 
         localStorage.removeItem('lessonData');
         setBreakTime(0);
-        setLessonTime(0);    
+        setLessonTime(0);
+        setPressedCompleted(true);    
     }
 
     return (

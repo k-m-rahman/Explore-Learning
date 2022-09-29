@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { addDataToDb, getStoredData } from '../../utilities/fakeDb';
 
 
-const Activity = ({activity,setLessonTime}) => {
+const Activity = ({activity,setLessonTime , pressedCompleted , setPressedCompleted}) => {
+    
     const {name,picture , about , time} = activity ;
+
+    const [added,setAdded] = useState(false) ;
+
+    if(pressedCompleted === true){
+        if(added===true){
+            setAdded(false);
+        }  
+    }
     
     const addLessonTime = () => {
+
+        setPressedCompleted(false) ;
+
         setLessonTime(current => current+time);
 
         const storedData = getStoredData();
@@ -16,8 +28,9 @@ const Activity = ({activity,setLessonTime}) => {
         else{
             storedData['lessonTime'] = time  ;
         }
-        
         addDataToDb(storedData);
+
+        setAdded(true);
     }
 
     return (
@@ -29,7 +42,7 @@ const Activity = ({activity,setLessonTime}) => {
                 <p>{about.length>100?about.slice(0,100):about}</p>
                 <p className='font-medium'>Time Required: <span className='font-semibold text-lg'>{time}s</span></p>
                 <div className="card-actions ">
-                <button onClick={addLessonTime} className="btn btn-primary rounded-lg w-full mt-3 shadow-md focus:bg-emerald-500">Add To List</button>
+                <button onClick={addLessonTime} className="btn btn-primary rounded-lg w-full mt-3 shadow-md focus:bg-emerald-500">{added?'Added':'Add To List'}</button>
                  </div>
             </div>
         </div>

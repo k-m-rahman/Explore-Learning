@@ -2,7 +2,8 @@ import React from 'react';
 import Activities from '../Activities/Activities';
 import PageName from '../PageName/PageName';
 
-const LeftSection = ({setLessonTime}) => {
+const LeftSection = ({setLessonTime , pressedCompleted , setPressedCompleted}) => {
+    
     return (
         <div className='lg:col-span-7 p-6  md:p-16 flex flex-col gap-8 bg-slate-50 shadow-xl'>
 
@@ -12,7 +13,7 @@ const LeftSection = ({setLessonTime}) => {
 
                 <h2 className='text-xl font-semibold mt-4'>Select Today's Lessons</h2>
                 
-                <Activities  setLessonTime={setLessonTime}></Activities>
+                <Activities setPressedCompleted={setPressedCompleted} pressedCompleted={pressedCompleted} setLessonTime={setLessonTime}></Activities>
             </div>
     );
 };

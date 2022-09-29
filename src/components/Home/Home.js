@@ -7,6 +7,8 @@ const Home = () => {
 
     const [LessonTime,setLessonTime] = useState(0);
 
+    const [pressedCompleted,setPressedCompleted] = useState(false) ;
+
 
     useEffect(()=>{
         const storedData = getStoredData() ;
@@ -21,10 +23,10 @@ const Home = () => {
         <div className='grid grid-cols-1  lg:grid-cols-9'>
 
             {/* Left section */}
-            <LeftSection  setLessonTime={setLessonTime}></LeftSection>
+            <LeftSection setPressedCompleted={setPressedCompleted} pressedCompleted={pressedCompleted} setLessonTime={setLessonTime}></LeftSection>
 
             {/* right section */}
-            <RightSection setLessonTime={setLessonTime} LessonTime={LessonTime} ></RightSection>
+            <RightSection setPressedCompleted={setPressedCompleted} setLessonTime={setLessonTime} LessonTime={LessonTime} ></RightSection>
         </div>
     );
 };
