@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
 
 
-const RightSection = ({LessonTime , setLessonTime , setPressedCompleted}) => {
+const RightSection = ({LessonTime , setLessonTime , setPressedCompleted , pressedCompleted}) => {
 
     // for setting the break time 
     const [breakTime,setBreakTime] = useState(0);
@@ -51,7 +51,7 @@ const RightSection = ({LessonTime , setLessonTime , setPressedCompleted}) => {
             <PersonalInfo></PersonalInfo>
 
             <div className='sticky top-0'>
-                <AddBreak setBreakTime={setBreakTime}></AddBreak>
+                <AddBreak pressedCompleted={pressedCompleted} setPressedCompleted={setPressedCompleted} setBreakTime={setBreakTime}></AddBreak>
 
                 <LessonDetails breakTime={breakTime} LessonTime={LessonTime}></LessonDetails>
 

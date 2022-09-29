@@ -30,7 +30,7 @@ const Home = () => {
 
 
             {/* right section */}
-            <RightSection setPressedCompleted={setPressedCompleted} setLessonTime={setLessonTime} LessonTime={LessonTime} ></RightSection>
+            <RightSection setPressedCompleted={setPressedCompleted} pressedCompleted={pressedCompleted} setLessonTime={setLessonTime} LessonTime={LessonTime} ></RightSection>
             
         </div>
     );

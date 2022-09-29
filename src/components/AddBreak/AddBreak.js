@@ -1,17 +1,12 @@
 import React from 'react';
-import { addDataToDb, getStoredData } from '../../utilities/fakeDb';
+import BreakTime from '../BreakTime/BreakTime';
 
-const AddBreak = ({setBreakTime}) => {
 
+const AddBreak = ({setBreakTime ,pressedCompleted , setPressedCompleted }) => {
+    
     const breakTimes = [10,20,30,40,50] ;
 
-    // for setting the clicked break time both into local storage and lower portion of the UI 
-    const addBreakTime = breakTime => {
-        setBreakTime(breakTime) ;
-        const storedData = getStoredData();
-        storedData['breakTime'] = breakTime ;
-        addDataToDb(storedData);
-    }
+    
 
     return (
         <div className='py-3 text-center mt-7'>
@@ -19,7 +14,7 @@ const AddBreak = ({setBreakTime}) => {
 
             <div className='flex gap-3 lg:gap-2 bg-blue-100 p-3 justify-center rounded-xl mt-5 shadow-lg  text-center w-5/6 md:w-1/2 lg:w-full mx-auto '>
                 {
-                    breakTimes.map(breakTime =><button onClick={()=>addBreakTime(breakTime)} className='p-2 bg-white rounded-full shadow-lg font-semibold text-sm focus:text-white focus:bg-teal-500' key={breakTime}>{breakTime}s</button> )
+                    breakTimes.map(breakTime => <BreakTime breakTime={breakTime} setBreakTime={setBreakTime} setPressedCompleted={setPressedCompleted} pressedCompleted={pressedCompleted} key={breakTime}></BreakTime> )
                 }
                          
             </div>
